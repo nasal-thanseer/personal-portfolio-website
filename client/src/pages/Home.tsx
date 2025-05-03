@@ -73,12 +73,12 @@ export default function Home() {
               </div>
               <div className="space-y-6 text-muted">
                 <p>
-                  Consulting and working together with startups and established companies.
-                  If you can see it, we can build it.
+                  Motivated Computer Science Engineering student with hands-on experience in full-stack web development, 
+                  AR/VR application design, and team leadership.
                 </p>
                 <p className="text-sm">
-                  Worked with previous clients such as:<br/>
-                  <span className="font-medium text-primary">Spotify, Airbnb, Microsoft, Adobe</span>
+                  Skills include:<br/>
+                  <span className="font-medium text-primary">Python, JavaScript, Unity3D, FlutterFlow, Firebase, Git, CMake</span>
                 </p>
               </div>
             </motion.div>
@@ -213,7 +213,7 @@ export default function Home() {
             <div className="md:col-span-1">
               <SectionHeader 
                 title="About" 
-                subtitle="The studio is about creating and activating existing brands online effectively, by using aesthetics and function together as a holistic mindset."
+                subtitle="Computer Science Engineering student passionate about merging technical excellence with creative problem-solving in web development, AR/VR applications, and team-based projects."
               />
               
               <div className="mt-8">
@@ -230,41 +230,41 @@ export default function Home() {
             <div className="md:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="border border-border p-6">
-                  <h3 className="text-lg font-medium mb-4">Branding</h3>
+                  <h3 className="text-lg font-medium mb-4">Web Development</h3>
                   <p className="text-sm text-muted mb-6">
-                    Establish a strong and consistent presence, while captivating the audience with a compelling narrative.
+                    Creating responsive and dynamic web solutions with modern frameworks and clean code practices.
                   </p>
                   <ul className="text-sm space-y-2 text-muted">
-                    <li>Visual Identities</li>
-                    <li>Logo</li>
-                    <li>Concept Development</li>
-                    <li>Discovery</li>
+                    <li>HTML5 / CSS / JavaScript</li>
+                    <li>WordPress</li>
+                    <li>Firebase</li>
+                    <li>UI/UX Design</li>
                   </ul>
                 </div>
                 
                 <div className="border border-border p-6">
-                  <h3 className="text-lg font-medium mb-4">Digital</h3>
+                  <h3 className="text-lg font-medium mb-4">AR/VR Applications</h3>
                   <p className="text-sm text-muted mb-6">
-                    From an idea to a product - UI/UX, prototyping, product design, and information architecture.
+                    Building immersive mixed reality solutions for education, consumer guidance, and interactive experiences.
                   </p>
                   <ul className="text-sm space-y-2 text-muted">
-                    <li>UI/UX</li>
-                    <li>APP</li>
-                    <li>WEB</li>
-                    <li>Prototyping</li>
+                    <li>Unity3D</li>
+                    <li>Vuforia SDK</li>
+                    <li>C#</li>
+                    <li>MR/VR Development</li>
                   </ul>
                 </div>
                 
                 <div className="border border-border p-6">
-                  <h3 className="text-lg font-medium mb-4">Development</h3>
+                  <h3 className="text-lg font-medium mb-4">App Development</h3>
                   <p className="text-sm text-muted mb-6">
-                    Bring the product to life and transform prototypes into fully functional digital products.
+                    Leading UI/UX design and mobile application development with a focus on quality and user experience.
                   </p>
                   <ul className="text-sm space-y-2 text-muted">
-                    <li>Frontend</li>
-                    <li>Responsiveness</li>
-                    <li>SEO</li>
-                    <li>Performance</li>
+                    <li>FlutterFlow</li>
+                    <li>Firebase</li>
+                    <li>UI/UX Design</li>
+                    <li>Team Leadership</li>
                   </ul>
                 </div>
               </div>
@@ -279,8 +279,8 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Reach out</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Taking in projects, one at a time. Whether it be short term, long term or just a one-time-only thing.
-              Let's talk and see how I can help.
+              Looking for a talented fullstack developer with AR/VR skills? I'm currently available for collaborations, 
+              internships and project-based work. Let's connect and discuss how I can contribute to your team.
             </p>
             <Link 
               href="/contact"
