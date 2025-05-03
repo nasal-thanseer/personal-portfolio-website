@@ -62,14 +62,14 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-10 tracking-tighter">
-                NASAL<br/>THANSEER
+                NASAL<br/>THANSEER M NOUFAL
               </h1>
               <div className="mb-8">
                 <div className="flex items-center mb-2">
                   <span className="text-xs inline-block bg-accent text-white px-2 py-1 mr-2">FULLSTACK DEVELOPER</span>
                 </div>
-                <p className="text-lg">Portfolio of Nasal Thanseer.<br/>
-                  Based in Kerala, works internationally.</p>
+                <p className="text-lg">Portfolio of Nasal Thanseer M Noufal.<br/>
+                  Based in Ajman, UAE, works internationally.</p>
               </div>
               <div className="space-y-6 text-muted">
                 <p>
