@@ -10,18 +10,18 @@ type ServiceCardProps = {
 export default function ServiceCard({ title, description, items, index }: ServiceCardProps) {
   return (
     <motion.div
-      className="bg-white p-6 shadow-sm"
+      className="bg-background border border-border p-6 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
     >
-      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-      <p className="text-muted mb-6">{description}</p>
+      <h3 className="text-2xl font-semibold mb-4 text-foreground">{title}</h3>
+      <p className="text-muted dark:text-gray-300 mb-6">{description}</p>
       
       <ul className="space-y-2">
         {items.map(item => (
-          <li key={item} className="flex items-center">
+          <li key={item} className="flex items-center text-foreground">
             <svg 
               className="h-4 w-4 mr-2 text-accent" 
               fill="none" 
