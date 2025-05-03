@@ -2,37 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font imports */
+@font-face {
+  font-family: 'Sauro';
+  src: url('/attached_assets/66c51397fb2c6cebac7dc373_Sauro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AeonikFono';
+  src: url('/attached_assets/66c7963c7b4177c9ea0d7281_AeonikFono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 0 0% 20%;
+    --background: 27 33% 94%;
+    --foreground: 220 13% 21%;
     
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 220 13% 21%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover-foreground: 220 13% 21%;
     
-    --primary: 0 0% 20%;
+    --primary: 220 13% 21%;
     --primary-foreground: 0 0% 98%;
     
-    --secondary: 36 33% 92%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 27 33% 90%;
+    --secondary-foreground: 220 13% 21%;
     
-    --muted: 0 0% 46%;
-    --muted-foreground: 0 0% 46%;
+    --muted: 220 14% 48%;
+    --muted-foreground: 220 14% 48%;
     
-    --accent: 14 100% 60%;
+    --accent: 8 86% 49%;
     --accent-foreground: 0 0% 98%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 36 33% 92%;
-    --input: 36 33% 92%;
-    --ring: 0 0% 20%;
+    --border: 27 13% 82%;
+    --input: 27 33% 92%;
+    --ring: 220 13% 21%;
     
-    --radius: 0.5rem;
+    --radius: 0.25rem;
   }
 }
 
@@ -42,11 +59,20 @@
   }
 
   body {
-    font-family: sans-serif;
+    @apply font-sans;
     -webkit-font-smoothing: antialiased;
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     position: relative;
+    font-size: 1.1111111111111112vw;
+  }
+  
+  @media screen and (min-width:1440px) {
+    body {font-size: 16px;}
+  }
+  
+  @media screen and (max-width:991px) {
+    body {font-size: 11.011111111111111px;}
   }
   
   body.with-border {
@@ -55,8 +81,13 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    @apply font-display;
+    font-weight: 400;
     letter-spacing: -0.025em;
+  }
+  
+  .mono {
+    @apply font-mono;
   }
 }
 
@@ -74,6 +105,7 @@
     animation: fadeIn 500ms ease-in-out;
   }
   
+  /* Grid layout for play items */
   .grid-masonry {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -89,6 +121,33 @@
   @media (min-width: 1024px) {
     .grid-masonry {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  /* Blindsight Studio specific layouts */
+  [item-style="wide"] {
+    grid-column: span 2;
+  }
+  
+  [item-style="tall"] {
+    grid-row: span 2;
+  }
+  
+  .item {
+    width: 100%;
+  }
+  
+  @media screen and (min-width: 1800px) {
+    .item {
+      width: 30vw;
+    }
+    
+    .hero-upper-wrapper {
+      height: 56.5vh;
+    }
+    
+    .hero-lower-wrapper {
+      height: 39.8vh;
     }
   }
   
@@ -108,6 +167,32 @@
         rgba(60, 60, 60, 0.04) 1px, 
         transparent 1px
       );
+  }
+  
+  /* Responsive container */
+  .container-responsive {
+    width: 100%;
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .container-responsive {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  /* Video or media elements */
+  .cms-play-video {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-origin: 0 0;
   }
   
   /* Border grid elements */

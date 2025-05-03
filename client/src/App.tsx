@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Switch, Route, useLocation } from "wouter";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
@@ -15,23 +16,40 @@ import PageTransition from "./components/PageTransition";
 function App() {
   const [location] = useLocation();
   
+  useEffect(() => {
+    // Apply theme to the root element for the Blindsight Studio style
+    document.documentElement.setAttribute('element-theme', '1');
+  }, []);
+  
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative bg-background text-foreground">
       <GridBackground />
       <Navbar />
-      <main className="flex-grow relative z-10">
+      <main className="flex-grow relative z-10 pt-20">
         <AnimatePresence mode="wait">
-          <PageTransition key={location}>
-            <Switch>
-              <Route path="/" component={Home} />
-              <Route path="/work" component={Work} />
-              <Route path="/work/:id" component={WorkDetail} />
-              <Route path="/about" component={About} />
-              <Route path="/play" component={Play} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NotFound} />
-            </Switch>
-          </PageTransition>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+            <Route path="/work">
+              <Work />
+            </Route>
+            <Route path="/work/:id">
+              {(params) => <WorkDetail id={params.id} />}
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/play">
+              <Play />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
         </AnimatePresence>
       </main>
       <Footer />
