@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 97%;
+    --foreground: 0 0% 20%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 36 33% 92%;
+    --secondary-foreground: 0 0% 20%;
+    
+    --muted: 0 0% 46%;
+    --muted-foreground: 0 0% 46%;
+    
+    --accent: 14 100% 60%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 36 33% 92%;
+    --input: 36 33% 92%;
+    --ring: 0 0% 20%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .hover-scale {
+    transition-property: transform;
+    transition-duration: 300ms;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  .fade-in {
+    animation: fadeIn 500ms ease-in-out;
+  }
+  
+  .grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-masonry {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-masonry {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
