@@ -9,9 +9,9 @@ type WeatherData = {
 
 export default function WeatherWidget() {
   const [weather, setWeather] = useState<WeatherData>({
-    temperature: 18,
-    condition: "Partly cloudy",
-    location: "Berlin"
+    temperature: 35,
+    condition: "Sunny",
+    location: "Ajman, UAE"
   });
 
   const getWeatherIcon = (condition: string) => {

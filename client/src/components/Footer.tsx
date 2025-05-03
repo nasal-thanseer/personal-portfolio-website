@@ -2,12 +2,11 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "Mail", href: "mailto:hello@studio.com" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/" },
-  { label: "PDF Resume", href: "/resume.pdf" },
-  { label: "Dribbble", href: "https://dribbble.com/" },
-  { label: "Spotify", href: "https://open.spotify.com/" }
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nasal-thanseer" },
+  { label: "Email", href: "mailto:nasalthanseermn@gmail.com" },
+  { label: "GitHub", href: "https://github.com/nasal-thanseer" },
+  { label: "Phone", href: "tel:+971555956623" },
+  { label: "Resume", href: "/resume.pdf" }
 ];
 
 export default function Footer() {
@@ -20,13 +19,13 @@ export default function Footer() {
         <div className="p-8 md:p-16 border-b md:border-b-0 md:border-r border-border">
           <h3 className="text-lg font-semibold mb-6">Contact</h3>
           <p className="text-sm text-muted mb-8">
-            Looking for a partner to develop design solutions
-            for your business? Feel free to reach out.
+            Looking for a fullstack developer with AR/VR expertise? I'm available for collaborations
+            and project-based work.
           </p>
           
           <div className="mb-10">
-            <a href="mailto:hello@blindsight.studio" className="text-accent inline-flex items-center group">
-              hello@blindsight.studio
+            <a href="mailto:nasalthanseermn@gmail.com" className="text-accent inline-flex items-center group">
+              nasalthanseermn@gmail.com
               <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
@@ -71,8 +70,8 @@ export default function Footer() {
         <div className="p-8 md:p-16">
           <h3 className="text-lg font-semibold mb-6">Location</h3>
           <p className="text-sm text-muted mb-8">
-            Based in Berlin, Germany.<br />
-            Working internationally.
+            Based in Ajman, United Arab Emirates.<br />
+            Available for remote and international projects.
           </p>
           
           <div className="mt-12">
@@ -84,8 +83,8 @@ export default function Footer() {
           </div>
           
           <div className="mt-8 text-xs text-muted">
-            <p>© {currentYear} Blindsight Studio.</p>
-            <p className="mt-1">All Rights Reserved.</p>
+            <p>© {currentYear} Nasal Thanseer M Noufal.</p>
+            <p className="mt-1">Portfolio & Personal Showcase.</p>
           </div>
         </div>
       </div>
