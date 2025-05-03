@@ -4,14 +4,13 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
   { href: "/play", label: "Play" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" }
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [location] = useLocation();
 
   const toggleMenu = () => {
@@ -19,82 +18,71 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
     // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location]);
 
   return (
-    <header className={`sticky top-0 z-50 bg-background transition-shadow ${
-      isScrolled ? "shadow-sm" : ""
-    }`}>
-      <div className="px-6">
-        <div className="flex justify-between items-center py-6">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center text-2xl font-semibold tracking-tight">
-              <svg className="h-8 w-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+      <div className="top-bar w-full h-1 bg-accent"></div>
+      <div className="flex justify-between items-center h-20">
+        <div className="flex items-center h-full border-r border-border px-5">
+          <Link href="/" className="flex items-center gap-4">
+            <div className="w-8 h-8">
+              <svg width="100%" height="auto" viewBox="0 0 338 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M253.023 142.008L241.738 137.111L122.772 131.003L111.45 120.257L219.438 95.8024L277.99 107.722L205.271 58.5L32 89.615L77.3921 236.281L143.848 279.5L125.261 223.715L200.366 234.609L252.839 190.64L306 191.703L253.023 142.008ZM151.79 190.186C142.011 190.186 134.075 182.26 134.075 172.484C134.075 162.708 142.011 154.776 151.79 154.776C161.569 154.776 169.504 162.702 169.504 172.484C169.504 182.266 161.569 190.186 151.79 190.186Z" fill="currentColor"/>
               </svg>
-              <span>STUDIO</span>
-            </Link>
-          </div>
-          
-          <nav className="hidden md:flex space-x-8">
-            {navLinks.map(link => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                className={`transition-colors duration-200 ${
-                  location === link.href 
-                    ? "text-accent" 
-                    : "text-primary hover:text-accent"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          
-          <button 
-            onClick={toggleMenu}
-            className="md:hidden focus:outline-none" 
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+            </div>
+          </Link>
         </div>
         
-        <div className={`md:hidden py-4 space-y-2 ${isMenuOpen ? "block" : "hidden"}`}>
-          {navLinks.map(link => (
+        <div className="flex-1 h-full border-r border-border px-6 flex items-center">
+          <div className="text-sm font-medium">BLINDSIGHT.STUDIO</div>
+        </div>
+        
+        <nav className="hidden md:flex h-full">
+          {navLinks.map((link, index) => (
             <Link 
               key={link.href} 
               href={link.href}
-              className={`block py-2 ${
+              className={`h-full flex items-center px-6 border-l border-border transition-colors duration-200 ${
                 location === link.href 
                   ? "text-accent" 
                   : "text-primary hover:text-accent"
               }`}
             >
-              {link.label}
+              <div className="text-sm">{link.label}</div>
             </Link>
           ))}
-        </div>
+        </nav>
+        
+        <button 
+          onClick={toggleMenu}
+          className="md:hidden h-full px-6 border-l border-border flex items-center justify-center focus:outline-none" 
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
+        </button>
+      </div>
+      
+      <div className={`md:hidden border-t border-border ${isMenuOpen ? "block" : "hidden"}`}>
+        {navLinks.map(link => (
+          <Link 
+            key={link.href} 
+            href={link.href}
+            className={`block px-6 py-4 border-b border-border ${
+              location === link.href 
+                ? "text-accent" 
+                : "text-primary hover:text-accent"
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </header>
   );
