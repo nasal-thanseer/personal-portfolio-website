@@ -24,7 +24,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div 
               className="order-2 md:order-1"
@@ -70,8 +70,8 @@ export default function Home() {
       <SectionDivider />
 
       {/* Latest Case Section */}
-      <section className="py-12 border-t border-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12">
+        <div className="px-6">
           <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="md:w-1/3">
               <div className="line-accent">
@@ -116,7 +116,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-12 bg-primary text-white relative">
         <div className="grid-dot-pattern absolute inset-0"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <WeatherWidget />
             <div className="flex space-x-12">
@@ -131,7 +131,7 @@ export default function Home() {
 
       {/* Work Showcase Section */}
       <section id="work" className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-6">
           <motion.header 
             className="mb-12"
             initial="initial"
@@ -171,7 +171,7 @@ export default function Home() {
 
       {/* Play Showcase Preview */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-6">
           <motion.header 
             className="mb-12"
             initial="initial"
@@ -208,7 +208,7 @@ export default function Home() {
       {/* Contact CTA */}
       <section className="py-16 bg-primary text-white relative">
         <div className="grid-dot-pattern absolute inset-0"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div className="px-6 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6">Reach out</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
