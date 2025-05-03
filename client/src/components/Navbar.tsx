@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/work", label: "Work" },
@@ -41,7 +42,7 @@ export default function Navbar() {
         </div>
         
         <nav className="hidden md:flex h-full">
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <Link 
               key={link.href} 
               href={link.href}
@@ -54,6 +55,10 @@ export default function Navbar() {
               <div className="text-sm">{link.label}</div>
             </Link>
           ))}
+          
+          <div className="h-full flex items-center px-6 border-l border-border">
+            <ThemeToggle />
+          </div>
         </nav>
         
         <button 
@@ -83,6 +88,9 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
+        <div className="px-6 py-4 border-b border-border">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

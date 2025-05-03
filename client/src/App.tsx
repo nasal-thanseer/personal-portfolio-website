@@ -11,49 +11,51 @@ import NotFound from "./pages/not-found";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GridBackground from "./components/GridBackground";
-import PageTransition from "./components/PageTransition";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 function App() {
   const [location] = useLocation();
   
   useEffect(() => {
-    // Apply theme to the root element for the Blindsight Studio style
+    // Apply default theme
     document.documentElement.setAttribute('element-theme', '1');
   }, []);
   
   return (
-    <div className="flex flex-col min-h-screen relative bg-background text-foreground">
-      <GridBackground />
-      <Navbar />
-      <main className="flex-grow relative z-10 pt-20">
-        <AnimatePresence mode="wait">
-          <Switch>
-            <Route path="/">
-              <Home />
-            </Route>
-            <Route path="/work">
-              <Work />
-            </Route>
-            <Route path="/work/:id">
-              {(params) => <WorkDetail id={params.id} />}
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/play">
-              <Play />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route>
-              <NotFound />
-            </Route>
-          </Switch>
-        </AnimatePresence>
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="flex flex-col min-h-screen relative">
+        <GridBackground />
+        <Navbar />
+        <main className="flex-grow relative z-10 pt-20">
+          <AnimatePresence mode="wait">
+            <Switch location={location} key={location}>
+              <Route path="/">
+                <Home />
+              </Route>
+              <Route path="/work">
+                <Work />
+              </Route>
+              <Route path="/work/:id">
+                <WorkDetail />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/play">
+                <Play />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route>
+                <NotFound />
+              </Route>
+            </Switch>
+          </AnimatePresence>
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
