@@ -35,11 +35,11 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <header className={`sticky top-0 z-50 bg-background border-b border-secondary transition-shadow ${
+    <header className={`sticky top-0 z-50 bg-background transition-shadow ${
       isScrolled ? "shadow-sm" : ""
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className="px-6">
+        <div className="flex justify-between items-center py-6">
           <div className="flex items-center">
             <Link href="/" className="flex items-center text-2xl font-semibold tracking-tight">
               <svg className="h-8 w-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

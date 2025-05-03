@@ -28,8 +28,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-12 bg-background border-t border-secondary">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="py-8 bg-background">
+      <div className="px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <Link 
