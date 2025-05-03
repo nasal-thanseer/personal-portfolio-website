@@ -8,12 +8,14 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/not-found";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import GridBackground from "./components/GridBackground";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      <GridBackground />
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/work" component={Work} />

@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import WeatherWidget from "../components/WeatherWidget";
 import StatsCounter from "../components/StatsCounter";
 import PlayCard from "../components/PlayCard";
+import SectionDivider from "../components/SectionDivider";
 import { projects } from "../data/projects";
 import { playItems } from "../data/playItems";
 
@@ -65,6 +66,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <SectionDivider />
 
       {/* Latest Case Section */}
       <section className="py-12 border-t border-secondary">
