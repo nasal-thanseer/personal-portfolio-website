@@ -133,7 +133,7 @@ export default function Home() {
       <section id="work" className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.header 
-            className="mb-12 border-grid grid-corner-accent px-4 py-4"
+            className="mb-12"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -173,7 +173,7 @@ export default function Home() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.header 
-            className="mb-12 border-grid grid-corner-accent px-4 py-4"
+            className="mb-12"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -209,7 +209,7 @@ export default function Home() {
       <section className="py-16 bg-primary text-white relative">
         <div className="grid-dot-pattern absolute inset-0"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="border-grid grid-corner-accent p-8 max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6">Reach out</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
               Taking in projects, one at a time. Whether it be short term, long term or just a one-time-only thing.

@@ -13,7 +13,7 @@ type PlayCardProps = {
 export default function PlayCard({ item, index, expanded = false }: PlayCardProps) {
   return (
     <motion.div 
-      className="mb-6 border-grid-full p-4"
+      className="mb-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.1 * index }}
