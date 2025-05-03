@@ -52,22 +52,22 @@ export default function About() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="max-w-3xl mx-auto text-center mb-16"
+            className="max-w-3xl mx-auto text-center mb-16 text-foreground"
             initial="initial"
             animate="animate"
             variants={fadeIn}
           >
             <h1 className="text-5xl font-bold mb-6">About</h1>
-            <p className="text-xl text-muted">
-              My studio is about creating and activating existing brands online effectively, 
-              by using aesthetics and function together as a holistic mindset.
+            <p className="text-xl text-muted dark:text-gray-300">
+              My portfolio showcases my expertise in web development, AR/VR applications, and
+              fullstack solutions, with a focus on combining aesthetics and functionality.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <motion.p 
-                className="text-lg mb-6"
+                className="text-lg mb-6 text-foreground"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -82,12 +82,13 @@ export default function About() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="text-foreground"
                   >
                     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-muted mb-3">{service.description}</p>
+                    <p className="text-muted dark:text-gray-300 mb-3">{service.description}</p>
                     <div className="grid grid-cols-2 gap-2">
                       {service.items.map(item => (
-                        <div key={item} className="text-sm font-medium">{item}</div>
+                        <div key={item} className="text-sm font-medium text-foreground">{item}</div>
                       ))}
                     </div>
                   </motion.div>
@@ -99,13 +100,13 @@ export default function About() {
               {processes.map((process, index) => (
                 <motion.div 
                   key={process.id}
-                  className="bg-white p-6"
+                  className="bg-background border border-border p-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 >
                   <h3 className="text-xl font-semibold mb-4">{process.title}</h3>
-                  <p className="text-muted">{process.description}</p>
+                  <p className="text-muted dark:text-gray-300">{process.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -117,8 +118,8 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Services</h2>
-            <p className="text-muted mb-12">
-              I offer a comprehensive range of design services tailored to your specific needs.
+            <p className="text-muted dark:text-gray-300 mb-12">
+              I offer a comprehensive range of services tailored to your specific needs.
               Each service is crafted to deliver value and create meaningful experiences.
             </p>
             
@@ -142,7 +143,7 @@ export default function About() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">My Approach</h2>
             
-            <div className="prose prose-lg mx-auto">
+            <div className="prose prose-lg dark:prose-invert mx-auto text-foreground">
               <p>
                 I believe that great design is about solving problems, not just making things look pretty. 
                 My approach combines strategic thinking with creative execution to deliver solutions that 
