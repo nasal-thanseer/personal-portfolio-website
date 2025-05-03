@@ -29,55 +29,43 @@ export default function Home() {
         <div className="px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
-              <BoxEnclosure 
-                delay={0.2}
-                withLoader={true}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="p-4"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                    DESIGN<br/>STUDIO
-                  </h1>
-                  <div className="mb-6">
-                    <span className="bg-accent text-white px-2 py-1 text-sm">DIGITAL DESIGNER</span>
-                    <p className="mt-4 text-lg">Portfolio of Alex Morgan.<br/>
-                      Based in Berlin, works internationally.</p>
-                  </div>
-                  <p className="text-muted mb-6">
-                    Consulting and working together with startups and established companies.
-                    If you can see it, we can build it.
-                  </p>
-                  <p className="text-sm text-muted">
-                    Worked with previous clients such as:
-                    <span className="font-medium text-primary"> Spotify, Airbnb, Microsoft, Adobe</span>
-                  </p>
-                </motion.div>
-              </BoxEnclosure>
+                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                  DESIGN<br/>STUDIO
+                </h1>
+                <div className="mb-6">
+                  <span className="bg-accent text-white px-2 py-1 text-sm">DIGITAL DESIGNER</span>
+                  <p className="mt-4 text-lg">Portfolio of Alex Morgan.<br/>
+                    Based in Berlin, works internationally.</p>
+                </div>
+                <p className="text-muted mb-6">
+                  Consulting and working together with startups and established companies.
+                  If you can see it, we can build it.
+                </p>
+                <p className="text-sm text-muted">
+                  Worked with previous clients such as:
+                  <span className="font-medium text-primary"> Spotify, Airbnb, Microsoft, Adobe</span>
+                </p>
+              </motion.div>
             </div>
             <div className="order-1 md:order-2">
-              <BoxEnclosure 
-                delay={0.3}
-                withLoader={true}
-                className="p-3"
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="relative h-64 md:h-96 bg-secondary overflow-hidden" 
               >
-                <div className="relative h-64 md:h-96 bg-secondary overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                    alt="Design workspace with laptop and accessories" 
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Image corner elements */}
-                  <div className="absolute top-0 left-0 w-[15px] h-[15px] border-l border-t border-white/20"></div>
-                  <div className="absolute top-0 right-0 w-[15px] h-[15px] border-r border-t border-white/20"></div>
-                  <div className="absolute bottom-0 left-0 w-[15px] h-[15px] border-l border-b border-white/20"></div>
-                  <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-r border-b border-white/20"></div>
-                </div>
-              </BoxEnclosure>
+                <img 
+                  src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Design workspace with laptop and accessories" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
             </div>
           </div>
         </div>
@@ -110,25 +98,18 @@ export default function Home() {
             </div>
             
             <div className="md:w-2/3">
-              <BoxEnclosure
-                delay={0.2}
-                withLoader={true}
-                className="p-3"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="overflow-hidden"
               >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={featuredProject.image}
-                    alt={featuredProject.title}
-                    className="w-full h-auto object-cover hover-scale"
-                  />
-                  
-                  {/* Image corner elements */}
-                  <div className="absolute top-0 left-0 w-[15px] h-[15px] border-l border-t border-white/20"></div>
-                  <div className="absolute top-0 right-0 w-[15px] h-[15px] border-r border-t border-white/20"></div>
-                  <div className="absolute bottom-0 left-0 w-[15px] h-[15px] border-l border-b border-white/20"></div>
-                  <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-r border-b border-white/20"></div>
-                </div>
-              </BoxEnclosure>
+                <img 
+                  src={featuredProject.image}
+                  alt={featuredProject.title}
+                  className="w-full h-auto object-cover hover-scale"
+                />
+              </motion.div>
             </div>
           </div>
         </div>

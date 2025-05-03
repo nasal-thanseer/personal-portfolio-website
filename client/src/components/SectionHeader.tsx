@@ -16,11 +16,7 @@ export default function SectionHeader({ title, subtitle, className = "" }: Secti
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      {/* Corner elements */}
-      <div className="absolute top-0 left-0 w-[15px] h-[15px] border-l border-t border-border opacity-30"></div>
-      <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-r border-b border-border opacity-30"></div>
-      
-      <div className="px-4 py-4">
+      <div className="px-1 py-2">
         <h2 className="text-4xl font-bold mb-2">{title}</h2>
         {subtitle && <p className="text-muted">{subtitle}</p>}
         

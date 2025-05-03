@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import BoxEnclosure from "./BoxEnclosure";
 
 type PlayCardProps = {
   item: {
@@ -13,12 +12,13 @@ type PlayCardProps = {
 
 export default function PlayCard({ item, index, expanded = false }: PlayCardProps) {
   return (
-    <BoxEnclosure
-      delay={0.1 * index}
-      withLoader={true}
-      className="mb-6 p-3"
+    <motion.div 
+      className="mb-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: 0.1 * index }}
     >
-      <div className="relative overflow-hidden">
+      <div className="overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -30,12 +30,6 @@ export default function PlayCard({ item, index, expanded = false }: PlayCardProp
             className="w-full h-auto hover-scale"
           />
         </motion.div>
-        
-        {/* Image corner elements */}
-        <div className="absolute top-0 left-0 w-[12px] h-[12px] border-l border-t border-white/20"></div>
-        <div className="absolute top-0 right-0 w-[12px] h-[12px] border-r border-t border-white/20"></div>
-        <div className="absolute bottom-0 left-0 w-[12px] h-[12px] border-l border-b border-white/20"></div>
-        <div className="absolute bottom-0 right-0 w-[12px] h-[12px] border-r border-b border-white/20"></div>
       </div>
       
       <motion.div
@@ -56,6 +50,6 @@ export default function PlayCard({ item, index, expanded = false }: PlayCardProp
           </div>
         )}
       </motion.div>
-    </BoxEnclosure>
+    </motion.div>
   );
 }

@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import BoxEnclosure from "./BoxEnclosure";
 
 type ProjectCardProps = {
   project: {
@@ -16,10 +15,11 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <BoxEnclosure 
-      delay={0.1 * index} 
-      withLoader={true}
+    <motion.div 
       className="group p-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 * index }}
     >
       <Link 
         href={`/work/${project.id}`}
@@ -37,12 +37,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </motion.div>
-          
-          {/* Image corner elements */}
-          <div className="absolute top-0 left-0 w-[15px] h-[15px] border-l border-t border-white/20"></div>
-          <div className="absolute top-0 right-0 w-[15px] h-[15px] border-r border-t border-white/20"></div>
-          <div className="absolute bottom-0 left-0 w-[15px] h-[15px] border-l border-b border-white/20"></div>
-          <div className="absolute bottom-0 right-0 w-[15px] h-[15px] border-r border-b border-white/20"></div>
         </div>
         
         <motion.div
@@ -61,6 +55,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </motion.div>
       </Link>
-    </BoxEnclosure>
+    </motion.div>
   );
 }
