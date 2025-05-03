@@ -80,13 +80,14 @@ export default function Home() {
               <h3 className="text-3xl font-bold mb-2">{featuredProject.title}</h3>
               <span className="inline-block bg-secondary text-primary px-2 py-1 text-xs mb-6">{featuredProject.categories[0]}</span>
               
-              <Link href={`/work/${featuredProject.id}`}>
-                <a className="inline-flex items-center text-accent hover:underline">
-                  <span>Read case</span>
-                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </a>
+              <Link 
+                href={`/work/${featuredProject.id}`}
+                className="inline-flex items-center text-accent hover:underline"
+              >
+                <span>Read case</span>
+                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </Link>
             </div>
             
@@ -107,6 +108,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <SectionDivider />
 
       {/* Stats Section */}
       <section className="py-12 bg-primary text-white">
@@ -120,6 +123,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <SectionDivider />
 
       {/* Work Showcase Section */}
       <section id="work" className="py-16 md:py-24">
@@ -146,17 +151,20 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center">
-            <Link href="/work">
-              <a className="inline-flex items-center text-accent border border-accent px-6 py-3 hover:bg-accent hover:text-white transition-colors duration-200">
-                <span>View all work</span>
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+            <Link 
+              href="/work"
+              className="inline-flex items-center text-accent border border-accent px-6 py-3 hover:bg-accent hover:text-white transition-colors duration-200"
+            >
+              <span>View all work</span>
+              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
+      
+      <SectionDivider />
 
       {/* Play Showcase Preview */}
       <section className="py-16 md:py-24">
@@ -179,17 +187,20 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center">
-            <Link href="/play">
-              <a className="inline-flex items-center text-accent border border-accent px-6 py-3 hover:bg-accent hover:text-white transition-colors duration-200">
-                <span>See the playground</span>
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
+            <Link 
+              href="/play"
+              className="inline-flex items-center text-accent border border-accent px-6 py-3 hover:bg-accent hover:text-white transition-colors duration-200"
+            >
+              <span>See the playground</span>
+              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
+      
+      <SectionDivider />
 
       {/* Contact CTA */}
       <section className="py-16 bg-primary text-white">
@@ -199,13 +210,14 @@ export default function Home() {
             Taking in projects, one at a time. Whether it be short term, long term or just a one-time-only thing.
             Let's talk and see how I can help.
           </p>
-          <Link href="/contact">
-            <a className="inline-flex items-center bg-accent text-white px-6 py-3 hover:bg-opacity-80 transition-colors duration-200">
-              <span>Contact</span>
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+          <Link 
+            href="/contact"
+            className="inline-flex items-center bg-accent text-white px-6 py-3 hover:bg-opacity-80 transition-colors duration-200"
+          >
+            <span>Contact</span>
+            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </Link>
         </div>
       </section>
