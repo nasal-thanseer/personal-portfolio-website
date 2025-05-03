@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import WeatherWidget from "../components/WeatherWidget";
 import StatsCounter from "../components/StatsCounter";
@@ -8,6 +8,7 @@ import PlayCard from "../components/PlayCard";
 import SectionDivider from "../components/SectionDivider";
 import SectionHeader from "../components/SectionHeader";
 import PageTransition from "../components/PageTransition";
+import ImageUploader from "../components/ImageUploader";
 import { projects } from "../data/projects";
 import { playItems } from "../data/playItems";
 import { ArrowRight } from "lucide-react";
@@ -16,16 +17,28 @@ export default function Home() {
   const featuredProject = projects[0];
   const featuredPlayItems = playItems.slice(0, 6);
   const featuredProjects = projects.slice(0, 6);
+  const [profileImage, setProfileImage] = useState<string>("https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80");
 
   useEffect(() => {
     // Add border effect to body when component mounts
     document.body.classList.add("with-border");
+    
+    // Check if we have a saved profile image in localStorage
+    const savedImage = localStorage.getItem('profileImage');
+    if (savedImage) {
+      setProfileImage(savedImage);
+    }
     
     // Clean up function to remove class when component unmounts
     return () => {
       document.body.classList.remove("with-border");
     };
   }, []);
+  
+  const handleImageChange = (imageUrl: string) => {
+    setProfileImage(imageUrl);
+    localStorage.setItem('profileImage', imageUrl);
+  };
 
   return (
     <div className="border-x border-border min-h-screen">
@@ -34,18 +47,23 @@ export default function Home() {
       <section className="min-h-screen flex items-center border-b border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
           {/* Left Column with Image */}
-          <div className="relative h-[50vh] md:h-[calc(100vh-5rem)] border-r border-border bg-background">
+          <div className="relative h-[40vh] md:h-[60vh] border-r border-border bg-background">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative w-full h-full bg-black overflow-hidden"
+              className="relative w-full h-full overflow-hidden"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Design workspace with laptop and accessories" 
-                className="w-full h-full object-cover opacity-80"
-              />
+              {/* Personal photo with upload capability */}
+              <div className="w-full h-full flex items-center justify-center p-4 md:p-8">
+                <div className="w-full max-w-md h-auto aspect-square rounded-md overflow-hidden">
+                  <ImageUploader 
+                    initialImage={profileImage}
+                    onImageChange={handleImageChange}
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
             </motion.div>
           </div>
           
