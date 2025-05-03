@@ -96,11 +96,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 8px;
-    height: 8px;
-    border-top: 1px solid hsl(var(--primary));
-    border-left: 1px solid hsl(var(--primary));
-    opacity: 0.3;
+    width: 12px;
+    height: 12px;
+    border-top: 1px solid hsl(var(--primary)/60%);
+    border-left: 1px solid hsl(var(--primary)/60%);
+    opacity: 0.6;
   }
   
   .border-grid::after {
@@ -108,11 +108,17 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 8px;
-    height: 8px;
-    border-bottom: 1px solid hsl(var(--primary));
-    border-right: 1px solid hsl(var(--primary));
-    opacity: 0.3;
+    width: 12px;
+    height: 12px;
+    border-bottom: 1px solid hsl(var(--primary)/60%);
+    border-right: 1px solid hsl(var(--primary)/60%);
+    opacity: 0.6;
+  }
+  
+  /* Grid lines on the edges */
+  .border-grid-full {
+    position: relative;
+    border: 1px solid hsl(var(--primary)/15%);
   }
   
   .grid-dot-pattern {
@@ -125,12 +131,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(
-      hsl(var(--primary)/10%) 1px,
-      transparent 1px
-    );
-    background-size: 16px 16px;
-    opacity: 0.4;
+    background-image: 
+      radial-gradient(hsl(var(--primary)/15%) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--primary)/5%) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary)/5%) 1px, transparent 1px);
+    background-size: 20px 20px, 40px 40px, 40px 40px;
+    opacity: 0.3;
     z-index: 0;
   }
   

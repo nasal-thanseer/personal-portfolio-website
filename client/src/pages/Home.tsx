@@ -114,8 +114,9 @@ export default function Home() {
       <SectionDivider />
 
       {/* Stats Section */}
-      <section className="py-12 bg-primary text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-primary text-white relative">
+        <div className="grid-dot-pattern absolute inset-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <WeatherWidget />
             <div className="flex space-x-12">
@@ -205,22 +206,25 @@ export default function Home() {
       <SectionDivider />
 
       {/* Contact CTA */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Reach out</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Taking in projects, one at a time. Whether it be short term, long term or just a one-time-only thing.
-            Let's talk and see how I can help.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-flex items-center bg-accent text-white px-6 py-3 hover:bg-opacity-80 transition-colors duration-200"
-          >
-            <span>Contact</span>
-            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
+      <section className="py-16 bg-primary text-white relative">
+        <div className="grid-dot-pattern absolute inset-0"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="border-grid grid-corner-accent p-8 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6">Reach out</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">
+              Taking in projects, one at a time. Whether it be short term, long term or just a one-time-only thing.
+              Let's talk and see how I can help.
+            </p>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center bg-accent text-white px-6 py-3 hover:bg-opacity-80 transition-colors duration-200"
+            >
+              <span>Contact</span>
+              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

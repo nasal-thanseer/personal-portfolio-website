@@ -16,14 +16,14 @@ type ProjectCardProps = {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div 
-      className="group"
+      className="group border-grid-full"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
     >
       <Link 
         href={`/work/${project.id}`}
-        className="block"
+        className="block p-4"
       >
         <div className="relative overflow-hidden mb-4">
           <img 
