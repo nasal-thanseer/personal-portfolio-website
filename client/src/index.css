@@ -21,33 +21,73 @@
 
 @layer base {
   :root {
-    --background: 27 33% 94%;
-    --foreground: 220 13% 21%;
+    /* Blindsight Studio exact color variables */
+    --swatch--sands-of-time: #f5f0ed;
+    --swatch--space-blue: #343b43;
+    --swatch--ctr-light: #ab4f44;
+    --swatch--prototype-blue-10: #0066ff1a;
+    --swatch--proto-blue-dark: #0055d4;
+    --swatch--succulent-orange: #fb5d44;
+    --swatch--succulent-orange-20: #fb5d4433;
+    --swatch--protoype-blue: #0066ff;
+    --swatch--proto-overlay-20: #0066ff33;
     
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 21%;
+    /* Color tokens matching Blindsight CSS */
+    --color--text: var(--swatch--space-blue);
+    --color--background: var(--swatch--sands-of-time);
+    --color--body: var(--swatch--space-blue);
+    --color--buttons: var(--swatch--protoype-blue);
+    --color--buttons-overlay: var(--swatch--prototype-blue-10);
+    --color--graphics: var(--swatch--succulent-orange);
+    --color--graphics-overlay: var(--swatch--succulent-orange-20);
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 21%;
+    /* Light mode tokens */
+    --light-mode--text: var(--swatch--space-blue);
+    --light-mode--background: var(--swatch--sands-of-time);
+    --light-mode--body: var(--swatch--space-blue);
+    --light-mode--graphics: var(--swatch--succulent-orange);
+    --light-mode--graphics-overlay: var(--swatch--succulent-orange-20);
+    --light-mode--buttons: var(--swatch--protoype-blue);
+    --light-mode--buttons-overlay: var(--swatch--prototype-blue-10);
+    --light-mode--interactions--hover-state: #c4d4f1;
     
-    --primary: 220 13% 21%;
-    --primary-foreground: 0 0% 98%;
+    /* Dark mode tokens */
+    --dark-mode--text: var(--swatch--sands-of-time);
+    --dark-mode--background: var(--swatch--space-blue);
+    --dark-mode--body: var(--swatch--ctr-light);
+    --dark-mode--graphics: var(--swatch--succulent-orange);
+    --dark-mode--graphics-overlay: var(--swatch--succulent-orange-20);
+    --dark-mode--buttons: var(--swatch--proto-blue-dark);
+    --dark-mode--buttons-overlay: var(--swatch--proto-overlay-20);
     
-    --secondary: 27 33% 90%;
-    --secondary-foreground: 220 13% 21%;
+    /* Shadcn compatibility values */
+    --background: 220 11% 24%;
+    --foreground: 24 6% 95%;
     
-    --muted: 220 14% 48%;
-    --muted-foreground: 220 14% 48%;
+    --card: 220 11% 20%;
+    --card-foreground: 24 6% 95%;
     
-    --accent: 8 86% 49%;
-    --accent-foreground: 0 0% 98%;
+    --popover: 220 11% 24%;
+    --popover-foreground: 24 6% 95%;
+    
+    --primary: 8 86% 57%;
+    --primary-foreground: 24 6% 95%;
+    
+    --secondary: 217 100% 50%;
+    --secondary-foreground: 24 6% 95%;
+    
+    --muted: 220 13% 29%;
+    --muted-foreground: 24 6% 85%;
+    
+    --accent: 8 86% 57%;
+    --accent-foreground: 24 6% 95%;
     
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 24 6% 95%;
     
-    --border: 27 13% 82%;
-    --input: 27 33% 92%;
-    --ring: 220 13% 21%;
+    --border: 220 13% 35%;
+    --input: 220 13% 35%;
+    --ring: 24 6% 95%;
     
     --radius: 0.25rem;
   }
@@ -59,12 +99,28 @@
   }
 
   body {
-    @apply font-sans;
+    font-family: 'AeonikFono', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: var(--color--background);
+    color: var(--color--text);
     position: relative;
     font-size: 1.1111111111111112vw;
+    line-height: 1.5;
+  }
+  
+  /* Element theme for light/dark modes */
+  html[element-theme="1"] {
+    --color--text: var(--light-mode--text);
+    --color--background: var(--light-mode--background);
+    --color--buttons: var(--light-mode--buttons);
+    --color--graphics: var(--light-mode--graphics);
+  }
+  
+  html[element-theme="2"] {
+    --color--text: var(--dark-mode--text);
+    --color--background: var(--dark-mode--background);
+    --color--buttons: var(--dark-mode--buttons);
+    --color--graphics: var(--dark-mode--graphics);
   }
   
   @media screen and (min-width:1440px) {
@@ -76,7 +132,7 @@
   }
   
   body.with-border {
-    @apply border border-border;
+    border: 1px solid var(--color--text);
     min-height: 100vh;
   }
   
