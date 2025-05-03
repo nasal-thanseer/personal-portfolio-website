@@ -23,7 +23,7 @@ function App() {
   
   return (
     <ThemeProvider>
-      <div className="flex flex-col min-h-screen relative">
+      <div className="flex flex-col min-h-screen relative bg-background text-foreground">
         <GridBackground />
         <Navbar />
         <main className="flex-grow relative z-10 pt-20">

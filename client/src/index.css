@@ -114,6 +114,18 @@
     --color--background: var(--light-mode--background);
     --color--buttons: var(--light-mode--buttons);
     --color--graphics: var(--light-mode--graphics);
+    
+    /* Shadcn compatibility */
+    --background: 24 6% 95%;
+    --foreground: 220 11% 24%;
+    
+    --primary: 220 11% 24%;
+    --primary-foreground: 24 6% 95%;
+    
+    --accent: 8 86% 57%;
+    --accent-foreground: 24 6% 95%;
+    
+    --border: 220 13% 85%;
   }
   
   html[element-theme="2"] {
@@ -121,6 +133,18 @@
     --color--background: var(--dark-mode--background);
     --color--buttons: var(--dark-mode--buttons);
     --color--graphics: var(--dark-mode--graphics);
+    
+    /* Shadcn compatibility */
+    --background: 220 11% 24%; 
+    --foreground: 24 6% 95%;
+    
+    --primary: 24 6% 95%;
+    --primary-foreground: 220 11% 24%;
+    
+    --accent: 8 86% 57%;
+    --accent-foreground: 24 6% 95%;
+    
+    --border: 220 13% 35%;
   }
   
   @media screen and (min-width:1440px) {
@@ -207,23 +231,7 @@
     }
   }
   
-  /* Blindsight Studio Grid System */
-  .blindsight-grid {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-size: 40px 40px;
-    background-image: 
-      /* Main grid */
-      linear-gradient(to right, 
-        rgba(60, 60, 60, 0.04) 1px, 
-        transparent 1px
-      ),
-      linear-gradient(to bottom, 
-        rgba(60, 60, 60, 0.04) 1px, 
-        transparent 1px
-      );
-  }
+  /* Empty area previously containing grid styles */
   
   /* Responsive container */
   .container-responsive {
