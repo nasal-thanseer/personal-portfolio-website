@@ -274,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 md:py-24 bg-primary text-white">
+      <section className="py-16 md:py-24 bg-accent text-accent-foreground">
         <div className="px-8 md:px-16 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Reach out</h2>
@@ -284,7 +284,7 @@ export default function Home() {
             </p>
             <Link 
               href="/contact"
-              className="inline-flex items-center bg-white text-primary px-6 py-3 hover:bg-white/90 transition-colors duration-200 group"
+              className="inline-flex items-center bg-background text-accent px-6 py-3 hover:bg-background/90 transition-colors duration-200 group"
             >
               <span>Contact</span>
               <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
