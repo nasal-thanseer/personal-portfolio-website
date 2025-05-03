@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import BoxEnclosure from "./BoxEnclosure";
 
 type StatsCounterProps = {
   count: number;
@@ -42,15 +43,21 @@ export default function StatsCounter({ count, label }: StatsCounterProps) {
   }, [isInView, count]);
   
   return (
-    <motion.div 
-      ref={ref}
-      className="text-center"
-      initial={{ opacity: 0, y: 10 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-      transition={{ duration: 0.5 }}
+    <BoxEnclosure 
+      delay={0.3} 
+      withLoader={true}
+      className="p-3"
     >
-      <div className="text-5xl font-bold mb-2">{displayCount}</div>
-      <div className="text-sm text-gray-400">{label}</div>
-    </motion.div>
+      <motion.div 
+        ref={ref}
+        className="text-center"
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="text-5xl font-bold mb-2">{displayCount}</div>
+        <div className="text-sm text-gray-400">{label}</div>
+      </motion.div>
+    </BoxEnclosure>
   );
 }
