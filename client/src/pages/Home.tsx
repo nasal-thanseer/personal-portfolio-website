@@ -6,6 +6,7 @@ import WeatherWidget from "../components/WeatherWidget";
 import StatsCounter from "../components/StatsCounter";
 import PlayCard from "../components/PlayCard";
 import SectionDivider from "../components/SectionDivider";
+import SectionHeader from "../components/SectionHeader";
 import { projects } from "../data/projects";
 import { playItems } from "../data/playItems";
 
@@ -132,16 +133,10 @@ export default function Home() {
       {/* Work Showcase Section */}
       <section id="work" className="py-16 md:py-24">
         <div className="px-6">
-          <motion.header 
-            className="mb-12"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h2 className="text-4xl font-bold mb-2">Work</h2>
-            <p className="text-muted">Carefully crafted projects. One at a time.</p>
-          </motion.header>
+          <SectionHeader 
+            title="Work" 
+            subtitle="Carefully crafted projects. One at a time."
+          />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
