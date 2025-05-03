@@ -68,12 +68,12 @@ export default function PageTransition({ children }: PageTransitionProps) {
               
               <div className="relative h-8">
                 <motion.div 
-                  className="text-2xl font-medium tracking-tighter overflow-hidden"
+                  className="text-xl font-medium tracking-tighter overflow-hidden"
                   initial={{ y: 40 }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
                 >
-                  BLINDSIGHT.STUDIO
+                  NASAL THANSEER M NOUFAL
                 </motion.div>
                 <motion.div 
                   className="absolute bottom-0 left-0 h-[2px] bg-accent"

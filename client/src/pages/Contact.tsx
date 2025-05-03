@@ -33,7 +33,7 @@ const fadeIn = {
 export default function Contact() {
   return (
     <div className="min-h-screen">
-      <section className="py-16 md:py-24 bg-primary text-white">
+      <section className="py-16 md:py-24 bg-accent text-accent-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
@@ -54,10 +54,10 @@ export default function Contact() {
                     href={link.href} 
                     target={link.href.startsWith('http') ? '_blank' : undefined}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="block bg-white/10 p-4 hover:bg-white/20 transition-colors"
+                    className="block bg-background/30 dark:bg-background/20 p-4 hover:bg-background/40 dark:hover:bg-background/30 transition-colors"
                   >
-                    <span className="text-gray-400 text-sm block mb-1">{link.type}</span>
-                    <span className="font-medium">{link.value}</span>
+                    <span className="text-gray-500 dark:text-gray-300 text-sm block mb-1">{link.type}</span>
+                    <span className="font-medium text-foreground">{link.value}</span>
                   </a>
                 ))}
               </div>
