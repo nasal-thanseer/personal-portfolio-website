@@ -62,14 +62,14 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-10 tracking-tighter">
-                BLINDSIGHT<br/>STUDIO
+                NASAL<br/>THANSEER
               </h1>
               <div className="mb-8">
                 <div className="flex items-center mb-2">
-                  <span className="text-xs inline-block bg-accent text-white px-2 py-1 mr-2">DIGITAL DESIGNER</span>
+                  <span className="text-xs inline-block bg-accent text-white px-2 py-1 mr-2">FULLSTACK DEVELOPER</span>
                 </div>
-                <p className="text-lg">Portfolio of Alex Morgan.<br/>
-                  Based in Berlin, works internationally.</p>
+                <p className="text-lg">Portfolio of Nasal Thanseer.<br/>
+                  Based in Kerala, works internationally.</p>
               </div>
               <div className="space-y-6 text-muted">
                 <p>

@@ -38,7 +38,7 @@ export default function Navbar() {
         </div>
         
         <div className="flex-1 h-full border-r border-border px-6 flex items-center">
-          <div className="text-sm font-medium">BLINDSIGHT.STUDIO</div>
+          <div className="text-sm font-medium">NASAL.THANSEER</div>
         </div>
         
         <nav className="hidden md:flex h-full">
