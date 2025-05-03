@@ -32,8 +32,11 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <Link href="/">
-              <a className="text-xl font-semibold">STUDIO</a>
+            <Link 
+              href="/"
+              className="text-xl font-semibold"
+            >
+              STUDIO
             </Link>
             <p className="text-sm text-muted mt-2">© {currentYear} Creative Studio. All rights reserved.</p>
           </div>
