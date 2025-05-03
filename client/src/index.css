@@ -27,8 +27,8 @@
     --swatch--ctr-light: #ab4f44;
     --swatch--prototype-blue-10: #0066ff1a;
     --swatch--proto-blue-dark: #0055d4;
-    --swatch--succulent-orange: #fb5d44;
-    --swatch--succulent-orange-20: #fb5d4433;
+    --swatch--accent-blue: #4B70F5;
+    --swatch--accent-blue-20: #4B70F533;
     --swatch--protoype-blue: #0066ff;
     --swatch--proto-overlay-20: #0066ff33;
     
@@ -38,15 +38,15 @@
     --color--body: var(--swatch--space-blue);
     --color--buttons: var(--swatch--protoype-blue);
     --color--buttons-overlay: var(--swatch--prototype-blue-10);
-    --color--graphics: var(--swatch--succulent-orange);
-    --color--graphics-overlay: var(--swatch--succulent-orange-20);
+    --color--graphics: var(--swatch--accent-blue);
+    --color--graphics-overlay: var(--swatch--accent-blue-20);
     
     /* Light mode tokens */
     --light-mode--text: var(--swatch--space-blue);
     --light-mode--background: var(--swatch--sands-of-time);
     --light-mode--body: var(--swatch--space-blue);
-    --light-mode--graphics: var(--swatch--succulent-orange);
-    --light-mode--graphics-overlay: var(--swatch--succulent-orange-20);
+    --light-mode--graphics: var(--swatch--accent-blue);
+    --light-mode--graphics-overlay: var(--swatch--accent-blue-20);
     --light-mode--buttons: var(--swatch--protoype-blue);
     --light-mode--buttons-overlay: var(--swatch--prototype-blue-10);
     --light-mode--interactions--hover-state: #c4d4f1;
@@ -55,8 +55,8 @@
     --dark-mode--text: var(--swatch--sands-of-time);
     --dark-mode--background: var(--swatch--space-blue);
     --dark-mode--body: var(--swatch--ctr-light);
-    --dark-mode--graphics: var(--swatch--succulent-orange);
-    --dark-mode--graphics-overlay: var(--swatch--succulent-orange-20);
+    --dark-mode--graphics: var(--swatch--accent-blue);
+    --dark-mode--graphics-overlay: var(--swatch--accent-blue-20);
     --dark-mode--buttons: var(--swatch--proto-blue-dark);
     --dark-mode--buttons-overlay: var(--swatch--proto-overlay-20);
     
@@ -79,7 +79,7 @@
     --muted: 220 13% 29%;
     --muted-foreground: 24 6% 85%;
     
-    --accent: 8 86% 57%;
+    --accent: 224 89% 63%;
     --accent-foreground: 24 6% 95%;
     
     --destructive: 0 84% 60%;
@@ -122,7 +122,7 @@
     --primary: 220 11% 24%;
     --primary-foreground: 24 6% 95%;
     
-    --accent: 8 86% 57%;
+    --accent: 224 89% 63%;
     --accent-foreground: 24 6% 95%;
     
     --border: 220 13% 85%;
@@ -141,7 +141,7 @@
     --primary: 24 6% 95%;
     --primary-foreground: 220 11% 24%;
     
-    --accent: 8 86% 57%;
+    --accent: 224 89% 63%;
     --accent-foreground: 24 6% 95%;
     
     --border: 220 13% 35%;
