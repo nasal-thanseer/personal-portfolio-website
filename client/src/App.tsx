@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route, useLocation, setBasepath } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
@@ -13,9 +13,8 @@ import Footer from "./components/Footer";
 import GridBackground from "./components/GridBackground";
 import { ThemeProvider } from "./components/ThemeProvider";
 
-// Configure wouter to use the base URL
+// Base path for GitHub Pages
 const base = "/personal-portfolio-website";
-setBasepath(base);
 
 function App() {
   const [location] = useLocation();
@@ -25,6 +24,9 @@ function App() {
     document.documentElement.setAttribute('element-theme', '1');
   }, []);
   
+  // Remove base path from location for route matching
+  const path = location.startsWith(base) ? location.slice(base.length) : location;
+  
   return (
     <ThemeProvider>
       <div className="flex flex-col min-h-screen relative bg-background text-foreground">
@@ -32,7 +34,7 @@ function App() {
         <Navbar />
         <main className="flex-grow relative z-10 pt-20">
           <AnimatePresence mode="wait">
-            <Switch location={location} key={location}>
+            <Switch location={path} key={path}>
               <Route path="/">
                 <Home />
               </Route>
