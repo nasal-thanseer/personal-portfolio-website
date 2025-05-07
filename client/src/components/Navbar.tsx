@@ -4,7 +4,12 @@ import ThemeToggle from "./ThemeToggle";
 import { useBasePath } from "../hooks/useBasePath";
 import { BaseLink } from "./BaseLink";
 
-const navLinks = [
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+const navLinks: NavLink[] = [
   { href: "/work", label: "Work" },
   { href: "/play", label: "Play" },
   { href: "/about", label: "About" },

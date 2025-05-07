@@ -2,7 +2,13 @@ import { useLocation } from "wouter";
 
 const base = "/personal-portfolio-website";
 
-export function useBasePath() {
+interface UseBasePathReturn {
+  path: string;
+  navigate: (to: string) => void;
+  base: string;
+}
+
+export function useBasePath(): UseBasePathReturn {
   const [location, setLocation] = useLocation();
 
   const path = location.startsWith(base) ? location.slice(base.length) : location;

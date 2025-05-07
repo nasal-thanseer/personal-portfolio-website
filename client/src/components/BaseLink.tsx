@@ -1,9 +1,11 @@
 import { Link as WouterLink } from "wouter";
 import { useBasePath } from "../hooks/useBasePath";
 
-interface BaseLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface BaseLinkProps {
   href: string;
   children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
 }
 
 export function BaseLink({ href, children, ...props }: BaseLinkProps) {
