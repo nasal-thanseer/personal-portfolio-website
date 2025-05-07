@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route } from "wouter";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
@@ -12,20 +12,15 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GridBackground from "./components/GridBackground";
 import { ThemeProvider } from "./components/ThemeProvider";
-
-// Base path for GitHub Pages
-const base = "/personal-portfolio-website";
+import { useBasePath } from "./hooks/useBasePath";
 
 function App() {
-  const [location] = useLocation();
+  const { path } = useBasePath();
   
   useEffect(() => {
     // Apply default theme
     document.documentElement.setAttribute('element-theme', '1');
   }, []);
-  
-  // Remove base path from location for route matching
-  const path = location.startsWith(base) ? location.slice(base.length) : location;
   
   return (
     <ThemeProvider>
