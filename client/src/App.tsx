@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route, useLocation, setBasepath } from "wouter";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
@@ -15,6 +15,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 
 // Configure wouter to use the base URL
 const base = "/personal-portfolio-website";
+setBasepath(base);
 
 function App() {
   const [location] = useLocation();
@@ -32,22 +33,22 @@ function App() {
         <main className="flex-grow relative z-10 pt-20">
           <AnimatePresence mode="wait">
             <Switch location={location} key={location}>
-              <Route path={`${base}/`}>
+              <Route path="/">
                 <Home />
               </Route>
-              <Route path={`${base}/work`}>
+              <Route path="/work">
                 <Work />
               </Route>
-              <Route path={`${base}/work/:id`}>
+              <Route path="/work/:id">
                 <WorkDetail />
               </Route>
-              <Route path={`${base}/about`}>
+              <Route path="/about">
                 <About />
               </Route>
-              <Route path={`${base}/play`}>
+              <Route path="/play">
                 <Play />
               </Route>
-              <Route path={`${base}/contact`}>
+              <Route path="/contact">
                 <Contact />
               </Route>
               <Route>
