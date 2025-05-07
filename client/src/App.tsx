@@ -13,6 +13,9 @@ import Footer from "./components/Footer";
 import GridBackground from "./components/GridBackground";
 import { ThemeProvider } from "./components/ThemeProvider";
 
+// Configure wouter to use the base URL
+const base = "/personal-portfolio-website";
+
 function App() {
   const [location] = useLocation();
   
@@ -29,22 +32,22 @@ function App() {
         <main className="flex-grow relative z-10 pt-20">
           <AnimatePresence mode="wait">
             <Switch location={location} key={location}>
-              <Route path="/">
+              <Route path={`${base}/`}>
                 <Home />
               </Route>
-              <Route path="/work">
+              <Route path={`${base}/work`}>
                 <Work />
               </Route>
-              <Route path="/work/:id">
+              <Route path={`${base}/work/:id`}>
                 <WorkDetail />
               </Route>
-              <Route path="/about">
+              <Route path={`${base}/about`}>
                 <About />
               </Route>
-              <Route path="/play">
+              <Route path={`${base}/play`}>
                 <Play />
               </Route>
-              <Route path="/contact">
+              <Route path={`${base}/contact`}>
                 <Contact />
               </Route>
               <Route>
