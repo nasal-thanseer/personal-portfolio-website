@@ -44,7 +44,11 @@ export default function Navbar() {
         </div>
         
         <div className="flex-1 h-full border-r border-border px-6 flex items-center">
-          <div className="text-sm font-medium">NASAL.THANSEER.M.NOUFAL</div>
+          <div className="text-sm font-medium">
+              <BaseLink href="/" className="text-sm font-medium hiver:text-accent transition-colors duration-200">
+                NASAL.THANSEER.M.NOUFAL
+              </BaseLink>
+            </div>
         </div>
         
         <nav className="hidden md:flex h-full">
