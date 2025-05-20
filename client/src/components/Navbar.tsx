@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="top-bar w-full h-1 bg-accent"></div>
       <div className="flex justify-between items-center h-20">
         <div className="flex items-center h-full border-r border-border px-5">
-          <BaseLink href="/" className="flex items-center gap-4">
+          <BaseLink href="/" className="flex items-center gap-4 text-primary hover:text-accent">
             <div className="w-8 h-8">
               <svg width="100%" height="auto" viewBox="0 0 338 338" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M253.023 142.008L241.738 137.111L122.772 131.003L111.45 120.257L219.438 95.8024L277.99 107.722L205.271 58.5L32 89.615L77.3921 236.281L143.848 279.5L125.261 223.715L200.366 234.609L252.839 190.64L306 191.703L253.023 142.008ZM151.79 190.186C142.011 190.186 134.075 182.26 134.075 172.484C134.075 162.708 142.011 154.776 151.79 154.776C161.569 154.776 169.504 162.702 169.504 172.484C169.504 182.266 161.569 190.186 151.79 190.186Z" fill="currentColor"/>
@@ -45,7 +45,7 @@ export default function Navbar() {
         
         <div className="flex-1 h-full border-r border-border px-6 flex items-center">
           <div className="text-sm font-medium">
-              <BaseLink href="/" className="text-sm font-medium hiver:text-accent transition-colors duration-200">
+              <BaseLink href="/" className="text-sm font-medium text-primary hover:text-accent transition-colors duration-200">
                 NASAL.THANSEER.M.NOUFAL
               </BaseLink>
             </div>

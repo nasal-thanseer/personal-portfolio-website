@@ -93,7 +93,7 @@ export default function Home() {
             <div className="md:col-span-1">
               <div className="mb-8">
                 <h3 className="text-sm font-medium mb-1">Read the</h3>
-                <h2 className="text-2xl font-bold mb-6">latest case</h2>
+                <h2 className="text-2xl font-bold mb-6">Latest case</h2>
               </div>
               
               <h3 className="text-3xl font-bold mb-2">{featuredProject.title}</h3>

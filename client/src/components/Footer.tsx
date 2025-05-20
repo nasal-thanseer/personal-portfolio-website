@@ -6,7 +6,7 @@ const socialLinks = [
   { label: "Email", href: "mailto:nasalthanseermn@gmail.com" },
   { label: "GitHub", href: "https://github.com/nasal-thanseer" },
   { label: "Phone", href: "tel:+971555956623" },
-  { label: "Resume", href: "/resume.pdf" }
+  { label: "Resume", href: "https://docs.google.com/document/d/1isEG9PDDgrPLgwi3hyaDZcAw-BZQC9nF3Hwhe_rJ2rA/edit?usp=sharing" }
 ];
 
 export default function Footer() {
